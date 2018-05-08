@@ -1,0 +1,47 @@
+\documentclass[12pt,oneside]{book}
+
+% Маргине, проред и тако то
+\usepackage[a4paper, margin=30mm]{geometry}
+\renewcommand{\baselinestretch}{1.5}
+
+% Фонтови, енкодинг
+\usepackage[]{mathtext}
+\usepackage[T2A, TS1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[serbianc, russian]{babel}
+
+\usepackage{graphicx}
+
+\usepackage[cmex10]{amsmath}
+\usepackage{amssymb}
+
+\usepackage[caption=false,font=footnotesize]{subfig}
+
+\usepackage{siunitx}
+\sisetup{detect-all = true,
+range-phrase = --,
+range-units = single,
+output-decimal-marker = {,}}
+\usepackage{physics}
+\usepackage{nicefrac}
+
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{soul}
+%\definecolor{lightblue}{rgb}{.90,.95,1}
+\colorlet{lightblue}{cyan!50}
+\sethlcolor{lightblue}
+
+%\usepackage[nomarkers]{endfloat}%notablist,nofiglist ili nolists
+
+\usepackage[]{foreign}
+
+\begin{document}
+
+\input{tsm.tex}
+
+\bibliographystyle{IEEEtran}
+\bibliography{ref}
+
+\end{document}
+
+
