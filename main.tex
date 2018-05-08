@@ -11,6 +11,7 @@
 \usepackage[serbianc, russian]{babel}
 
 \usepackage{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
 \usepackage[cmex10]{amsmath}
 \usepackage{amssymb}
@@ -25,11 +26,11 @@ output-decimal-marker = {,}}
 \usepackage{physics}
 \usepackage{nicefrac}
 
-\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-\usepackage{soul}
-%\definecolor{lightblue}{rgb}{.90,.95,1}
-\colorlet{lightblue}{cyan!50}
-\sethlcolor{lightblue}
+%\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+%\usepackage{soul}
+%%\definecolor{lightblue}{rgb}{.90,.95,1}
+%\colorlet{lightblue}{cyan!50}
+%\sethlcolor{lightblue}
 
 %\usepackage[nomarkers]{endfloat}%notablist,nofiglist ili nolists
 
@@ -37,11 +38,12 @@ output-decimal-marker = {,}}
 
 \begin{document}
 
+\input{ekv.tex}
+psgpar
+
 \input{tsm.tex}
 
 \bibliographystyle{IEEEtran}
 \bibliography{ref}
 
 \end{document}
-
-
