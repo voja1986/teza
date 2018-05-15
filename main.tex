@@ -17,6 +17,7 @@
 \usepackage{amssymb}
 
 \usepackage[caption=false,font=footnotesize]{subfig}
+\renewcommand{\thesubfigure}{\asbuk{subfigure}}
 
 \usepackage{siunitx}
 \sisetup{detect-all = true,
@@ -36,7 +37,7 @@ output-decimal-marker = {,}}
 
 \usepackage[]{foreign}
 
-\title{Метаматериjали са асиметричним резонаторима у структурама са вођеним таласом}
+\title{АСИМЕТРИЧНИ РЕЗОНАТОРИ КАО ЕЛЕМЕНТИ ЈЕДИНИЧНИХ ЋЕЛИЈА ЈЕДНОДИМЕНЗИОНАЛНИХ МЕТАМАТЕРИЈАЛА}
 \date{\today}
 \author{Војислав Милошевић}
 
@@ -46,12 +47,11 @@ output-decimal-marker = {,}}
 
 \tableofcontents
 
-\input{ex.tex}
+\include{ex}
 
-\input{ekv.tex}
-psgi
+\include{ekv}
 
-\input{tsm.tex}
+\include{tsm}
 
 \bibliographystyle{IEEEtran}
 \bibliography{ref}
