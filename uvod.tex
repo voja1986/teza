@@ -29,6 +29,7 @@ range-units = single,
 output-decimal-marker = {,}}
 \usepackage{physics}
 \usepackage{nicefrac}
+\usepackage[siunitx]{circuitikz}
 
 %\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 %\usepackage{soul}
@@ -131,13 +132,13 @@ output-decimal-marker = {,}}
     \centering
     \begin{tikzpicture}
         \usetikzlibrary{positioning,calc,intersections,decorations.markings}
-        \draw[fill=lightgray] (-1,-4) rectangle (1,4);
+        \draw[fill=lightgray] (-2,-4) rectangle (2,4);
         %\draw[step=1.0,black,thin] (-5,-5) grid (5,5);
-        \path[name path=levo]  (-1,-4) -- (-1,4);
-        \path[name path=desno] (1,-4)  -- (1,4);
-        \draw[dashed,name path=horiz] (-3,0)  -- (3,0);
+        \path[name path=levo]  (-2,-4) -- (-2,4);
+        \path[name path=desno] (2,-4)  -- (2,4);
+        \draw[dashed,name path=horiz] (-4.7,0)  -- (5,0);
         \node at (0,3) {$n=-1$};
-        \coordinate (iz) at (-2.2,0);
+        \coordinate (iz) at (-3.5,0);
 
         \begin{scope}[thick, red, decoration={
     markings,
@@ -162,7 +163,7 @@ output-decimal-marker = {,}}
         \path[name path=zr2]  (iz) -- ++(-45:5cm);
         \path [name intersections={of=zr2 and levo, by={pr2a}}];
         \draw[postaction={decorate}] (iz) -- (pr2a);
-        \path[name path global=zr2b]  (pr2a) -- ++(45:5cm);
+        \path[name path global=zr2b]  (pr2a) -- ++(45:7cm);
         \path [name intersections={of=zr2b and desno, by={pr2b}}];
         \draw[postaction={decorate}] (pr2a) -- (pr2b);
         \path[name path=zr2c]  (pr2b) -- ++(-45:5cm);
@@ -171,32 +172,21 @@ output-decimal-marker = {,}}
 
         \end{scope}
 
-        \draw[densely dashed] (iz) -- ++(0,-2) ++(4,0) -- ++(0,2);
-        \draw[<->] (iz) ++(0,-1.8) -- ++(4,0) node[midway, below] {$2d$};
-        \draw[<->] (-1,-3) -- ++(2,0) node[midway, below] {$d$};
+        \draw[densely dashed] (iz) -- ++(0,-2) ++(8,0) -- ++(0,2);
+        \draw[<->] (iz) ++(0,-1.8) -- ++(8,0) node[midway, below] {$2d$};
+        \draw[<->] (-2,-3) -- ++(4,0) node[midway, below] {$d$};
 
         \path [name intersections={of=zr1b and zr2b, by={f1}}];
         \filldraw (f1) circle (2pt) node[below] {$F_1$};
         \filldraw (iz) circle (2pt) node[below left] {извор}
-            ++(4,0) circle (2pt) node[below right] {$F_2$};
-
-        %\draw [red, name intersections={of=zr1 and levo,by={pr1a}}] (iz) -- (pr1a);
-        %\node[dot*=below:A] (iz) at (-2,0) {извор};
-        %\draw (iz) -- ++(30:2cm);
-        %\filldraw 
-            %(-3,0) circle (2pt) %node[align=left,   below] {test 1\\is aligned left} --
-            %(0,0) circle (2pt) %node[align=center, below] {test 2\\is centered}     -- 
-            %(3,0) circle (2pt) %node[align=right,  below] {test 3\\is right aligned};
-            %;
-        %\draw (-3,0) -- (-1,1.0) -- (0,0) -- (1,-1.0) -- (3,0);
-        %\draw (-3,0) -- (-1,-0.3) -- (0,0) -- (1,0.3) -- (3,0);
+            ++(8,0) circle (2pt) node[below right] {$F_2$};
     \end{tikzpicture}
     \caption{Сочиво...}
     \label{uvod:ssocivo}
 \end{figure}
 Једна од најзанимљивијих особина средине са негативним индексом се састоји у следећем. Претпоставимо плочу, дебљине $d$, са индексом преламања $n=-1$, која се налази у вакууму (сл.~\ref{uvod:ssocivo}). На граничним површинама, упадни зраци се преламају под истим углом под којим долазе, симетрично у односу на нормалу, $\vartheta_1 = \vartheta_2$. Уколико се тачкасти извор налази на растојању $a$ од ивице, при чему је $a<d/2$, показује се да се оваква плоча понаша као сочиво, са две тачке фокуса -- једна у унутрашњости плоче, а друга на растојању $2d$ од извора~\cite{veselago_cir}.
 
-Како би се детаљније испитала способност плоче материјала са негативним индексом да се понаша као сочиво, није довољна апроксимација геометријске оптике, већ је потребно размотрити понашање електромагнетних таласа. Најзанимљивији случај је материјал са $\frac{\varepsilon}{\varepsilon_0}\to 1$ и $\frac{\mu}{\mu_0}\to 1$. Пендри је показао, у свом познатом раду, да је овакво сочиво у стању да реконструише комплетно поље из равни извора на растојању $2d$~\cite{pendry3}. На овај начин се формира слика која превазилази дифракциони лимит, због чега је овакво сочиво добило епитет „савршено``. Појава се може тумачити помоћу експанзије поља у просторне хармонике. Показује се да је материјал са негативним индексом у стању да пренесе не само пропагационе модове, као обично сочиво, већ и еванесцентне~\cite{markes_knjiga}. У пракси се морају размотрити губици, који онемогућавају постизање идеалних резултата, али у литератури се могу наћи извештаји о оствареној резолуцији испод дифракционог лимита~\cite{grbic2004overcoming}.
+Како би се детаљније испитала способност плоче материјала са негативним индексом да се понаша као сочиво, није довољна апроксимација геометријске оптике, већ је потребно размотрити понашање електромагнетних таласа. Најзанимљивији случај је материјал са $\nicefrac{\varepsilon}{\varepsilon_0}\to 1$ и $\nicefrac{\mu}{\mu_0}\to 1$. Пендри је показао, у свом познатом раду, да је овакво сочиво у стању да реконструише комплетно поље из равни извора на растојању $2d$~\cite{pendry3}. На овај начин се формира слика која превазилази дифракциони лимит, због чега је овакво сочиво добило епитет „савршено``. Појава се може тумачити помоћу експанзије поља у просторне хармонике. Показује се да је материјал са негативним индексом у стању да пренесе не само пропагационе модове, као обично сочиво, већ и еванесцентне~\cite{markes_knjiga}. У пракси се морају размотрити губици, који онемогућавају постизање идеалних резултата, али у литератури се могу наћи извештаји о оствареној резолуцији испод дифракционог лимита~\cite{grbic2004overcoming}.
 
 \subsection{Реализација}
 
@@ -210,7 +200,177 @@ output-decimal-marker = {,}}
 
 Метаматеријал $<=>$ негативни индекс? Можда нешто рећи о томе докле су стигли са свим будалаштинама?
 
-\section{Водови}
+\section{Метаматеријали и водови}
+
+\subsection{Дуални вод}
+
+\begin{figure}[h]
+    \centering
+    \subfloat[]{
+    \begin{tikzpicture}[scale=0.9]
+        \ctikzset{tripoles/mos style/arrows}
+        \draw 
+            (-2,0) to [short] ++(0.75,0)
+            to [L=$L$] ++(2.5,0)
+            to [short] ++(0.75,0)
+
+
+            (-1.25,0) to [C=$C$] ++(0,-2)
+            node [ground] {}
+
+            (1.25,0) to [C=$C$]++(0,-2)
+            node [ground] {}
+
+            ;
+        \draw[dashed]
+            (-2,0) -- ++(-1,0)
+            (2,0) -- ++(1,0)
+            ;
+        \draw[<->] (-1.25,1) -- (1.25,1) node[midway,above] {$l$};
+        \draw[densely dashed] (-1.25,0) -- ++(0,1.2)
+            (1.25,0) -- ++(0,1.2);
+
+
+    \end{tikzpicture}\label{uvod:rhvod}}\hfil
+    \subfloat[]{
+    \begin{tikzpicture}[scale=0.9]
+        \ctikzset{tripoles/mos style/arrows}
+        \draw 
+            (-2,0) to [short] ++(0.75,0)
+            to [C=$C$] ++(2.5,0)
+            to [short] ++(0.75,0)
+
+
+            (-1.25,0) to [L=$L$] ++(0,-2)
+            node [ground] {}
+
+            (1.25,0) to [L=$L$]++(0,-2)
+            node [ground] {}
+
+            ;
+        \draw[dashed]
+            (-2,0) -- ++(-1,0)
+            (2,0) -- ++(1,0)
+            ;
+
+        \draw[dashed]
+            (-2,0) -- ++(-1,0)
+            (2,0) -- ++(1,0)
+            ;
+        \draw[<->] (-1.25,1.2) -- (1.25,1.2) node[midway,above] {$l$};
+        \draw[densely dashed] (-1.25,0) -- ++(0,1.4)
+            (1.25,0) -- ++(0,1.4);
+    \end{tikzpicture}\label{uvod:lhvod}}
+    \caption{Елементарна ћелија, дужине $l$, обичног вода (а) и дуалног (б).}
+    %\label{fig:}
+\end{figure}
+Паралелно са развојем тродимензионалних метаматеријала, појавио се алтернативни концепт за реализацију негативног индекса преламања, односно инверзних таласа, на бази теорије водова~\cite{bib2,bib4,bib3}. Наиме, постоји аналогија између Максвелових једначина и једначина телеграфичара за водове, где напон одговара електричном пољу, а струја магнетном. Елементарна секција вода испуњеног „нормалним`` диелектриком (са $n>0$) приказана је на сл.~\ref{uvod:rhvod}. Размотримо дуалну структуру, на којој су замењена места реактивних елемената (сл.~\ref{uvod:lhvod}). Применом теорије периодичних структура~\cite{pozar2009microwave}, можемо одредити фазну константу простирања, $\beta$, и Блохову импедансу, $Z_B$:
+\begin{align}
+    \cos{\beta l} & = 1 - \frac{\omega_c^2}{2\omega^2},\\%деф. дужину ћелије!!
+    Z_b & = \sqrt{\frac{L}{C}\left(1-\frac{\omega_c^2}{\omega^2}\right)},
+\end{align}
+где је $\omega_c = \nicefrac{2}{\sqrt{LC}}$. Ако је ћелија много мања од таласне дужине, важи $\omega\ll\omega_c$. У том случају се горњи изрази могу апроксимирати као:
+\begin{align}
+    \beta l & = -\frac{\omega_c}{\omega},\\
+    Z_B & = \sqrt{\frac{L}{C}} \equiv Z_C,
+\end{align}
+где је $Z_C$ карактеристична импеданса вода испуњеног обичним диелектриком. У овој апроксимацији се може показати да су параметри ефективног диелектрика, који би испуњавао овакав вод, негативни~\cite{markes_knjiga}.
+
+Дисперзиони дијаграми...
+
+\subsection{Композитни водови}
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[scale=0.9]
+        \ctikzset{tripoles/mos style/arrows}
+        \draw 
+            (-2,0) 
+            to [L=$L_R$] ++(2.0,0)
+            to [C=$C_L$] ++(2.0,0)
+
+
+            (-2.0,0) -- ++(0,-1)
+            -- ++(-1,0)
+            to [C=$C_R$] ++(0,-2)
+            -- ++(1,0)
+            node [ground] {}
+
+            (-2,-1)-- ++(1,0)
+            to [L=$L_L$] ++(0,-2)
+            -- ++(-1,0)
+
+
+            (2.0,0) -- ++(0,-1)
+            -- ++(-1,0)
+            to [C=$C_R$] ++(0,-2)
+            -- ++(1,0)
+            node [ground] {}
+
+            (2,-1)-- ++(1,0)
+            to [L=$L_L$] ++(0,-2)
+            -- ++(-1,0)
+
+            (-2,0) -- ++(-1,0)
+            (2,0) -- ++(1,0)
+
+            ;
+
+        \draw[dashed]
+            (-3,0) -- ++(-1,0)
+            (3,0) -- ++(1,0)
+            ;
+
+    \end{tikzpicture}
+    \caption{Композитни вод.}
+    \label{uvod:crlh}
+\end{figure}
+Директна реализација дуалног вода са сл.~\ref{uvod:lhvod} у пракси била би могућа само на веома ниским учестаностима, када је могуће занемарити ефекте простирања. У микроталасном опсегу, неопходно је постојање обичног вода као носиоца простирања таласа, који се затим оптерећује реактивним елементима -- редним капацитивностима и паралелним индуктивностима. Допринос овог основног вода није могуће занемарити, одговарајућа еквивалентна шема јединичне ћелије представља комбинацију сл.~\ref{uvod:rhvod} и \ref{uvod:lhvod}, и приказана је на сл.~\ref{uvod:crlh}. У литератури су овакве структуре познате под називом \emph{композитни водови} (\foreign{composite right-/left-handed transmission line, CRLH TL}). Параметри дуалне структуре су $C_L$ и $L_L$, док $C_R$ и $L_R$ одговарају воду носиоцу. Применом теорије периодичних структура, добијају се следећи изрази за дисперзиону релацију:
+\begin{align}
+    \cos{\beta l} & = 1 - \frac{\omega^2}{2\omega_R^2}\left( 1 - \frac{\omega_s^2}{\omega^2} \right)\left( 1 - \frac{\omega_p^2}{\omega^2} \right),\\
+    Z_B & = \sqrt{\frac{L_R}{C_R}\frac{1-\frac{\omega_s^2}{\omega^2}}{1-\frac{\omega_p^2}{\omega^2}} - \frac{L_R^2\omega^2}{4}\left( 1 - \frac{\omega_s^2}{\omega^2} \right)^2},
+\end{align}
+где су
+\begin{align}
+    \omega_R & = \frac{1}{\sqrt{L_R C_R} },\\
+    \omega_L & = \frac{1}{\sqrt{L_L C_L} },
+\end{align}
+резонансе обичног и дуалног вода, респективно, и
+\begin{align}
+    \omega_s & = \frac{1}{\sqrt{L_R C_L} },\\
+    \omega_p & = \frac{1}{\sqrt{L_L C_R} },
+\end{align}
+представљају резонантне фреквенције у редној и паралелној грани композитног вода.
+
+\begin{figure}[h]
+    \centering
+    \subfloat[]{\begin{tikzpicture}
+        \draw[] (-3,3) -- (-3,-3) node[below] {$-\pi$}
+            -- (0,-3) node[below] {$\beta l$}
+            -- (3,-3) node[below] {$\pi$} -- ++(0,6);
+        \draw[->] (0,-3) -- (0,3.2) node[right] {$\omega$};
+        %\draw[scale=0.5,domain=-3:3,smooth,variable=\x,blue] plot ({\x},{\x*\x});
+        %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({cos(\y)},{\y});
+        %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot (\y,{cos(\y)});
+        \draw [domain=-3:0, samples=50, blue] plot (\x,{-1.8+0.5*cos(pi*\x r/3)}) node[right] {$\omega_s$};
+        \draw [domain=-3:0, xshift=3cm, samples=50, red] plot (\x,{1.2+1.1*cos(pi*\x r/3)});
+        \draw[red] (0,0.0) node[left] {$\omega_p$};
+    \end{tikzpicture}\label{uvod:d_nebalans} }\hfill
+    \subfloat[]{\begin{tikzpicture}
+        \draw[] (-3,3) -- (-3,-3) node[below] {$-\pi$}
+            -- (0,-3) node[below] {$\beta l$}
+            -- (3,-3) node[below] {$\pi$} -- ++(0,6);
+        \draw[->] (0,-3) -- (0,3.2) node[right] {$\omega$};
+        %\draw[scale=0.5,domain=-3:3,smooth,variable=\x,blue] plot ({\x},{\x*\x});
+        %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot ({cos(\y)},{\y});
+        %\draw[scale=0.5,domain=-3:3,smooth,variable=\y,red]  plot (\y,{cos(\y)});
+        %\draw [domain=-3:0, samples=50, blue] plot (\x,{-1.8+0.5*cos(pi*\x r/3)}) node[right] {$\omega_s$};
+        \draw [domain=-3:3, samples=50, olive] plot (\x,{1.6*sin(pi*\x r/6)});
+        \draw[olive] (0,0.0) node[below right] {$\omega_0$};
+    \end{tikzpicture}\label{uvod:d_balans} }
+    \caption{}
+    %\label{fig:}
+\end{figure}
 
 \bibliographystyle{babplai3}
 \bibliography{ref}
