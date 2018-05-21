@@ -1,56 +1,56 @@
-\documentclass[12pt,oneside]{book}
+%\documentclass[12pt,oneside]{book}
 
-% Маргине, проред и тако то
-\usepackage[a4paper, margin=30mm]{geometry}
-\renewcommand{\baselinestretch}{1.5}
+%% Маргине, проред и тако то
+%\usepackage[a4paper, margin=30mm]{geometry}
+%\renewcommand{\baselinestretch}{1.5}
 
-% Фонтови, енкодинг
-\usepackage[]{mathtext}
-\usepackage[T2A, TS1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage[english, russian, serbianc]{babel}
-%\usepackage[russian]{babel}
-\usepackage{babelbib}
-\setbtxfallbacklanguage{english}
+%% Фонтови, енкодинг
+%\usepackage[]{mathtext}
+%\usepackage[T2A, TS1]{fontenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[english, russian, serbianc]{babel}
+%%\usepackage[russian]{babel}
+%\usepackage{babelbib}
+%\setbtxfallbacklanguage{english}
 
-\usepackage{graphicx}
-\DeclareGraphicsExtensions{.pdf,.png,.jpg}
-\usepackage{tikz}
+%\usepackage{graphicx}
+%\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+%\usepackage{tikz}
 
-\usepackage[cmex10]{amsmath}
-\usepackage{amssymb}
+%\usepackage[cmex10]{amsmath}
+%\usepackage{amssymb}
 
-\usepackage[caption=false,font=footnotesize]{subfig}
-\renewcommand{\thesubfigure}{\asbuk{subfigure}}
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%\renewcommand{\thesubfigure}{\asbuk{subfigure}}
 
-\usepackage{siunitx}
-\sisetup{detect-all = true,
-range-phrase = --,
-range-units = single,
-output-decimal-marker = {,}}
-\usepackage{physics}
-\usepackage{nicefrac}
-\usepackage[siunitx]{circuitikz}
+%\usepackage{siunitx}
+%\sisetup{detect-all = true,
+%range-phrase = --,
+%range-units = single,
+%output-decimal-marker = {,}}
+%\usepackage{physics}
+%\usepackage{nicefrac}
+%\usepackage[siunitx]{circuitikz}
 
-%\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-%\usepackage{soul}
-%%\definecolor{lightblue}{rgb}{.90,.95,1}
-%\colorlet{lightblue}{cyan!50}
-%\sethlcolor{lightblue}
+%%\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+%%\usepackage{soul}
+%%%\definecolor{lightblue}{rgb}{.90,.95,1}
+%%\colorlet{lightblue}{cyan!50}
+%%\sethlcolor{lightblue}
 
-%\usepackage[nomarkers]{endfloat}%notablist,nofiglist ili nolists
+%%\usepackage[nomarkers]{endfloat}%notablist,nofiglist ili nolists
 
-\usepackage[]{foreign}
+%\usepackage[]{foreign}
 
-\title{АСИМЕТРИЧНИ РЕЗОНАТОРИ КАО ЕЛЕМЕНТИ ЈЕДИНИЧНИХ ЋЕЛИЈА ЈЕДНОДИМЕНЗИОНАЛНИХ МЕТАМАТЕРИЈАЛА}
-\date{\today}
-\author{Војислав Милошевић}
+%\title{АСИМЕТРИЧНИ РЕЗОНАТОРИ КАО ЕЛЕМЕНТИ ЈЕДИНИЧНИХ ЋЕЛИЈА ЈЕДНОДИМЕНЗИОНАЛНИХ МЕТАМАТЕРИЈАЛА}
+%\date{\today}
+%\author{Војислав Милошевић}
 
-\begin{document}
+%\begin{document}
 
 \chapter{Увод}
 
-\tableofcontents
+%\tableofcontents
 
 \section{Основни појмови}
 
@@ -391,7 +391,29 @@ output-decimal-marker = {,}}
 
 Поступак синтезе дуалних водова, описан у претходној секцији, у литератури је познат под називом \emph{нерезонантни}, зато што се за постизање негативних вредности параметара користе реактивни елементи, који немају резонансе у опсегу од интереса. Могућ је и други приступ, \emph{резонантни}, где се водови и таласоводи периодично спрежу са подталасним резонаторима, као што су сплит ринг и сродне топологије. У том случају, еквивалентна шема ћелије биће нешто сложенија него на сл.~\ref{uvod:crlh}, али са веома сличним карактеристикама – такође испољава композитну природу, и поседује опсеге са негативним и нормалним параметрима~\cite{markes_knjiga}.
 
-\bibliographystyle{babplai3}
-\bibliography{ref}
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\linewidth]{sl_uvod/cpw.jpg}
+    \caption{Резонантни „леворуки`` вод на бази копланарног таласовода~\cite{doi:10.1063/1.1631392}.}
+    \label{uvod:sl_cpw}
+\end{figure}
+Први пример „леворуког`` резонантног вода предложен је у~\cite{doi:10.1063/1.1631392} и приказан на сл.~\ref{uvod:sl_cpw}, са карактеристиком на којој се види пропусни опсег. Као носилац искоришћен је копланарни таласовод. Негативна пермеабилност реализована је помоћу сплит ринг резонатора, који се налазе са друге стране супстрата, чиме се постиже јача спрега него у случају да је цела структура унипланарна. За остваривање негативне пермитивности користе се танке траке које спајају врући проводник са масом.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  требало би рећи још нешто овде, ценим  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\end{document}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=1.0\linewidth]{sl_uvod/mstrip_csrr.jpg}
+    \caption{Резонантни „леворуки`` вод на бази микрострип вода~\cite{baena}.}
+    \label{uvod:sl_mstrip_csrr}
+\end{figure}
+Још један пример „леворуког`` вода, у микрострип технологији, приказан је на сл.~\ref{uvod:sl_mstrip_csrr}. Овде се за реализацију негативне пермитивности користи структура дуална сплит ринг резонатору, тзв. комплементарни СРР, који су ецовани у проводној равни с доње стране супстрата. Негативна пермеабилност остварена је помоћу капацитивних процепа на воду.
+
+Водови, добијени на основу резонантног приступа, коришћени су за многе практичне примене, између осталог за развој филтара, сензора и RFID тагова~\cite{bib6,bib7,bib8}. Треба приметити да често ове примене нису директно повезане са концептом метаматеријала и ефективног хомогеног медијума. Уместо тога, фокус је на контроли дисперзије и карактеристичне импедансе на воду, као и на малој електричној величини. У том контексту, за означавање оваквих структура користе се термини као што су „водови на бази метаматеријала`` (\foreign{metamaterial-based lines}) или „водови инспирисани метаматеријалима`` (\foreign{metamaterial-inspired lines}).
+
+%\bibliographystyle{babplai3}
+%\bibliography{ref}
+
+%\end{document}
