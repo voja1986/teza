@@ -1,4 +1,5 @@
 \documentclass[12pt,oneside]{book}
+\usepackage{subfiles}
 
 % Маргине, проред и тако то
 \usepackage[a4paper, margin=30mm]{geometry}
@@ -58,6 +59,8 @@ output-decimal-marker = {,}}
 \include{ekv}
 
 \include{tsm}
+
+\subfile{eit}
 
 \bibliographystyle{babplai3}
 \bibliography{ref}
