@@ -1,4 +1,5 @@
 \documentclass[12pt,oneside]{book}
+\usepackage{subfiles}
 
 % Маргине, проред и тако то
 \usepackage[a4paper, margin=30mm]{geometry}
@@ -8,10 +9,13 @@
 \usepackage[]{mathtext}
 \usepackage[T2A, TS1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage[serbianc, russian]{babel}
+\usepackage[english, russian, serbianc]{babel}
+\usepackage{babelbib}
+\setbtxfallbacklanguage{english}
 
 \usepackage{graphicx}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{tikz}
 
 \usepackage[cmex10]{amsmath}
 \usepackage{amssymb}
@@ -26,6 +30,7 @@ range-units = single,
 output-decimal-marker = {,}}
 \usepackage{physics}
 \usepackage{nicefrac}
+\usepackage[siunitx]{circuitikz}
 
 %\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 %\usepackage{soul}
@@ -47,13 +52,17 @@ output-decimal-marker = {,}}
 
 \tableofcontents
 
+\include{uvod}
+
 \include{ex}
 
 \include{ekv}
 
 \include{tsm}
 
-\bibliographystyle{IEEEtran}
+\subfile{eit}
+
+\bibliographystyle{babplai3}
 \bibliography{ref}
 
 \end{document}
