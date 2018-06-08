@@ -13,6 +13,11 @@
 \usepackage{babelbib}
 \setbtxfallbacklanguage{english}
 
+\renewcommand\bibname{Reference}
+
+%\providecommand{\main}{.}  % *Modification: define file location
+\def\biblio{\bibliographystyle{babunsrt-fl}\bibliography{ref}}  % *Modification: added `\main/` to specify relative file location.
+
 \usepackage{graphicx}
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \usepackage{tikz}
@@ -47,6 +52,7 @@ output-decimal-marker = {,}}
 \author{Војислав Милошевић}
 
 \begin{document}
+\def\biblio{}
 
 \maketitle
 

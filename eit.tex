@@ -76,7 +76,36 @@
 \label{sec:model_spregnutikh_ostsilatora}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth]{sl_eit/opruge.png}
+%    \includegraphics[width=0.8\linewidth]{sl_eit/opruge.png}
+    \begin{tikzpicture}
+    \usetikzlibrary{decorations.pathmorphing,patterns,calc}
+    \node[circle,fill=lightgray,inner sep=0.5mm,draw] (a) at (-2,0) {$\omega_0,\gamma_2$};
+\node[circle,fill=lightgray,inner sep=0.5mm,draw] (b) at (2,0) {$\omega_0,\gamma_1$};
+\draw[decoration={aspect=0.3, segment length=3mm, amplitude=3mm,coil},decorate] (-4.7,0) -- (a); 
+\draw (-5,0) -- (-4.7,0);
+\draw[decoration={aspect=0.3, segment length=2.6mm, amplitude=3mm,coil},decorate] ($(b.east)+(0.3,0)$) -- (4.8,0); 
+\draw (b.east) -- ++(0.3,0);
+\draw (4.8,0) -- (5,0); 
+\draw[decoration={aspect=0.3, segment length=2mm, amplitude=2mm,coil},decorate] ($(a.east)+(0.2,0)$) -- ($(b.west)-(0.2,0)$) node[midway, above, yshift=0.2cm] {$\kappa$}; 
+\draw (a.east) -- ++(0.2,0);
+\draw (b.west) -- ++(-0.2,0);
+\coordinate (l1) at (-5,-0.6);
+\coordinate (r1) at (5,-0.6);
+\fill [pattern = north east lines] 
+(l1) -- (r1) 
+-- ++(0,1.2) 
+-- ++(0.4,0)
+-- ($(r1)+(0.4,-0.4)$)
+-- ($(l1)-(0.4,0.4)$)
+-- ++(0,0.4)
+-- ++(0,1.2)
+-- ++(0.4,0)
+-- cycle;
+\draw[thick] (l1) -- (r1);
+\draw[thick] (l1) -- ++(0,1.2);
+\draw[thick] (r1) -- ++(0,1.2);
+\draw[->,thick] ($(b)+(-0.6,0.7)$) -- ++(1.1,0) node[midway,above] {$\vec{F}$};
+    \end{tikzpicture}    
     \caption{Спрегнути механички осцилатори.}
     \label{fig:sl_eit/opruge}
 \end{figure}
